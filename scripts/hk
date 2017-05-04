@@ -1,0 +1,109 @@
+// var Converter = (function(){
+//     var c = function () {
+//
+//     }
+//     var a = function () {
+//         c();
+//     }
+//
+//     var b = function () {
+//
+//     }
+//
+//
+//     return {
+//         a: a,
+//         b: b
+//     }
+// })
+//
+// var convObj = new Converter();
+// convObj.a()
+
+
+ if(isMatch) {
+            $('#decimal').addClass( "isError" );
+        } else {
+            $('#decimal').removeClass( "isError" );
+        }
+
+
+
+        function c2_8_to_10( inputValue, radix ) {
+        	var outputValue = 0;
+         	for(var j = 0; j < inputValue.length; j++) {
+        	 	outputValue+= inputValue[ j ] * Math.pow( radix, inputValue.length - j - 1 );
+        	}
+        	return outputValue + EMPTY_STRING;
+        }
+        function c10_to_2_8( inputValue, radix ) {
+        	var outputValue = EMPTY_STRING;
+        	do {
+        		outputValue = inputValue % radix + outputValue;
+        		inputValue = Math.floor( inputValue / radix );
+        	} while ( inputValue > 0 );
+        	return outputValue;
+        }
+
+        function decimal_to_binary_octal(decValue, radix){
+            var outputValue = '';
+            do {
+                outputValue = decValue % radix + outputValue;
+                decValue = Math.floor( decValue / radix );
+            } while ( decValue > 0 );
+            outputValue = outputValue.replace(/^0+/, '');
+            return outputValue;
+        }
+        /////////
+
+        // function convertDecimal() {
+        //     var dec = $('#decimal').val();
+        //     $('#hex').val(decimalToHex(dec));
+        //     $('#octal').val(decimal_to_binary_octal(dec, 8));
+        //     $('#binary').val(decimal_to_binary_octal(dec, 2));
+        //
+        //     $('#decimal').keypress(function(e){
+        //         if ((0 == this.value.length  && 48 == e.which) || (48 > e.which || 57 < e.which)){
+        //             return false;
+        //         }
+        //     });
+        //     $('#decimal').attr('title', $('#decimal').val());
+        // }
+        // function convertHex() {
+        // 	var hex = $('#hex').val(),
+        //         hex = hex.toUpperCase();
+        //     $('#decimal').val(hexToDecimal(hex));
+        //     $('#octal').val(hexToOctal(hex));
+        //     $('#binary').val(hexToBinary(hex));
+        //
+        //     $('#hex').keypress(function(e){
+        //         if ((0 != this.value.length || 48 != e.which)|| (48 > e.which || (57 < e.which && 65 > e.which) || (70 < e.which && 97 > e.which) || 102 < e.which)){
+        //             return false;
+        //         }
+        //     });
+        //     $('#hex').attr('title', $('#hex').val());
+        // }
+        // function convertOctal() {
+        //     var octal = $('#octal').val();
+        //     $('#decimal').val(octalToDecimal(octal));
+        //     $('#hex').val(octalToHex(octal));
+        //     $('#binary').val(octalToBinary(octal));
+        //     $('#octal').keypress(function(e){
+        //         if ((0 == this.value.length && 48 == e.which) || (48 > e.which || 55 < e.which)){
+        //             return false;
+        //         }
+        //     });
+        //     $('#octal').attr('title', $('#octal').val());
+        // }
+        // function convertBinary() {
+        //     var binary = $('#binary').val();
+        //     $('#decimal').val(binaryToDecimal(binary));
+        //     $('#hex').val(binaryToHex(binary));
+        //     $('#octal').val(binaryToOctal(binary));
+        //     $('#binary').keypress(function(e){
+        //         if ((0 == this.value.length && 48 == e.which) || (48 > e.which || 49 < e.which )) {
+        //             return false;
+        //         }
+        //     });
+        //     $('#binary').attr('title', $('#binary').val());
+        // }

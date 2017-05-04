@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="scripts/jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+
+			function hexToOctal(hexValue) {
+				var HexBinaryArray = ['0000','0001','0010','0011','0100','0101','0110','0111', '1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'],
+					HexValues = ['0','1','2','3','4','5','6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'],
+					OctalBinaryArray = ['000','001','010','011','100','101','110','111'],
+					notHex = /[^0-9A-Fa-f]/;
+				
+				for(var i = 0; i < arguments.length; i++) {	
+					if(notHex.test(arguments[i])) {
+						alert(arguments[i] + " is not an hex number");
+						return;		
+					}
+				}
+				//hex2binary
+				// for(var i = 0; i < hexValue.length; i++) {
+					var binaryValue = '',
+						str = hexValue.toString(),
+						str = str.toUpperCase();
+					for(var j = 0; j < str.length; j++) {
+						binaryValue += HexBinaryArray[HexValues.indexOf(str.substr(j, 1))];
+					}	
+					// console.log(binaryValue );
+				// }
+				//bin2octal
+				// for(var i = 0; i < binaryValue.length; i++) {
+					var octalValue = '',
+						str = binaryValue.toString();
+					while(str.length % 3 != 0) {
+						str = '0' + str;
+					}		
+					for(var j = 0; j < str.length; j +=  3) {
+						octalValue += OctalBinaryArray.indexOf(str.substr(j, 3));
+					}
+					octalValue = octalValue.replace(/^0+/, '');			
+					return octalValue;
+				// }	
+			}	
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="classification" content="education" />
+		<meta name="copyright" content="ogma ink &#0169; 2015" />
+		<meta name="date" content="March.07.2017" />
+
+		<link rel="stylesheet" href="content/style/radix.css" />
+		<link rel="icon" type="image/png" href="content/img/favicon.png">
+
+		<script src="scripts/jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src="scripts/radix.js" async></script>
+
+		<title>Number Converter</title>
+	</head>
+		<div class="heading">
+			<h1>Number Conversion</h1>
+			<img id="walker" src="content/img/maker.gif">
+		</div>
+		<main>
+
+			<table>
+				<tbody>
+					<tr>
+						<th>
+							<label title="Decimal">Decimal (10)</label>
+						</th>
+						<td>
+							<input id="dec" name="radix10" type="text" tabindex="0" title="Decimal" placeholder="Decimal" />
+						</td>	`
+					</tr>
+					<tr>
+						<th>
+							<label title="Hex">Hex (16)</label>
+						</th>
+						<td>
+							<input id="hex" name="radix16" type="text" tabindex="1" title="Hexadecimal" placeholder="Hex" />
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label title="Octal">Octal (8)</label>
+						</th>
+						<td>
+							<input id="oct" name="radix8" type="text" tabindex="2" title="Octal" placeholder="Octal" />
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label title="Binary">Binary (2)</label>
+						</th>
+						<td>
+							<input id="bin" name="radix2" type="text" tabindex="3" title="Binary" placeholder="Binary" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</main>
+		<script>
+			var walker = document.getElementById('walker'),
+				walkingLeft = true,
+				dist = 1,
+				leftBorder = 1250,
+				rightBorder = 10,
+				position = rightBorder;
+
+			function check(){
+				position += walkingLeft ? dist : -dist;
+				walker.style.right = position +'px';
+				if (position > leftBorder || position < rightBorder){
+					walkingLeft = !walkingLeft;
+					walker.classList.toggle('flip')
+				}
+			}
+			setInterval(check, 50)
+		</script>
+	</body>
+</html>

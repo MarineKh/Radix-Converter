@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="scripts/jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+
+			function decToOctal(dec) {
+				var binaryValue = '',
+					RADIX = 8,
+					len = arguments.length,
+					notDecimal = /[^0-9]/;
+
+				for(var i = 0, max = len; i < max; i++) {	
+					if(notDecimal.test(arguments[i])) {
+						alert(arguments[i] + " is not a decimal number");
+						return;		
+					}
+				}
+				do {
+					binaryValue = dec % RADIX + binaryValue;
+					dec = Math.floor(dec / RADIX); 
+				} 
+				while (dec > 0);
+					console.log(binaryValue);	
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

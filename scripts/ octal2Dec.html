@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="scripts/jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+
+			// function octalToDec(bin) {
+			// 	var decimal = 0,
+			// 	notOctal = /[^0-7]/;
+				
+			// 	for(var i = 0; i < arguments.length; i++) {	
+			// 		if(notOctal.test(arguments[i])) {
+			// 			alert(arguments[i] + " is not a octal number");
+			// 			return;		
+			// 		}
+			// 	}
+			// 	for(var index = bin.length-1; index >= 0; index--) {
+			// 		decimal += parseInt(bin[index]) * Math.pow(8, bin.length-1-index);
+			// 	}
+			// 	return decimal;
+			// }
+			function octalToDec(octalValue) {
+			    var decimal = 0;
+			    for(var index = octalValue.length-1; index >= 0; index--) {
+			        decimal += parseInt(octalValue[index]) * Math.pow(8, octalValue.length-1-index);
+			    }
+			    // binaryValue = binaryValue.replace(/^0+/, '');
+			    console.log (decimal);
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

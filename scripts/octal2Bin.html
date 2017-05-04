@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="scripts/jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+			function octalToBinary(octalValue) {
+				var OctalBinaryArray = ['000','001','010','011','100','101','110','111'],
+					OctalValues = ['0','1','2','3','4','5','6','7'],	
+					len = arguments.length,
+		
+				// for(var i = 0, max = len; i < max; i++) {
+					var binaryValue = '',
+						str = octalValue.toString();
+					for(var j = 0; j < str.length; j++) {
+						binaryValue += OctalBinaryArray[OctalValues.indexOf(str.substr(j, 1))];
+					}	
+					binaryValue = binaryValue.replace(/^0+/, '');
+					return binaryValue;
+				// }
+			}
+		</script>
+		
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,94 @@
+@font-face {
+    font-family: myHeading;
+    src: url(../fonts/Hopeless.otf);
+}
+@font-face {
+    font-family: myLabel;
+    src: url(../fonts/McLetters.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+main {
+    height: 100vh;
+
+    background-color: #65beb6;
+}
+.heading {
+    height: 180px;
+
+    background-color: rgb(255, 255, 255);
+
+    transition: background-color, .5s, linear;
+}
+h1 {
+    width: 70%;
+
+    position: relative;
+    top: 50%;
+    z-index: 99;
+
+    color: #009688;
+    font-family: myHeading;
+    font-size: 50px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+
+    margin: auto;
+
+    transform: translateY(-50%);
+}
+table {
+    padding-top: 100px;
+    margin: auto;
+}
+th {
+    text-align: right;
+
+    padding-right: 5px;
+}
+label {
+    color: rgb(239, 239, 239);
+    font-size: 18px;
+    font-family: myHeading;
+    line-height: 20px;
+    user-select: none;
+}
+input {
+    height: 30px;
+    width: 240px;
+
+    color: #009688;
+
+    text-indent: 5px;
+
+    border: 1px solid #666966;
+    border-radius: 0 10px 10px 10px;
+    margin-top: 2px;
+}
+input:focus {
+    outline: none;
+}
+.isError {
+    border: 1px solid #ff0000;
+}
+img {
+    width: 70px;
+
+    position: absolute;
+    top: 110px;
+
+    user-select: none;
+}
+
+img.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
